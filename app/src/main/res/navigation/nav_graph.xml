@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_formDetailsFragment_to_formDescriptionFragment"
             app:destination="@id/formDescriptionFragment" />
+        <argument
+            android:name="Location"
+            app:argType="com.android.example.housingconnect.Post" />
     </fragment>
     <fragment
         android:id="@+id/formDescriptionFragment"
@@ -46,6 +49,9 @@
         <action
             android:id="@+id/action_formDescriptionFragment_to_formImageFragment2"
             app:destination="@id/formImageFragment" />
+        <argument
+            android:name="Details"
+            app:argType="com.android.example.housingconnect.Post" />
     </fragment>
     <fragment
         android:id="@+id/formImageFragment"
@@ -55,6 +61,9 @@
         <action
             android:id="@+id/action_formImageFragment_to_housingFeedFragment"
             app:destination="@id/housingFeedFragment" />
+        <argument
+            android:name="Description"
+            app:argType="com.android.example.housingconnect.Post" />
     </fragment>
     <fragment
         android:id="@+id/housingDisplayFragment"
