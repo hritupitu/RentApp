@@ -38,8 +38,8 @@
             android:id="@+id/action_formDetailsFragment_to_formDescriptionFragment"
             app:destination="@id/formDescriptionFragment" />
         <argument
-            android:name="Location"
-            app:argType="com.android.example.housingconnect.Post" />
+            android:name="location"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/formDescriptionFragment"
@@ -50,8 +50,23 @@
             android:id="@+id/action_formDescriptionFragment_to_formImageFragment2"
             app:destination="@id/formImageFragment" />
         <argument
-            android:name="Details"
-            app:argType="com.android.example.housingconnect.Post" />
+            android:name="location"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="beds"
+            app:argType="integer" />
+        <argument
+            android:name="baths"
+            app:argType="integer" />
+        <argument
+            android:name="rent"
+            app:argType="integer" />
+        <argument
+            android:name="movein"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/formImageFragment"
@@ -69,7 +84,11 @@
         android:id="@+id/housingDisplayFragment"
         android:name="com.android.example.housingconnect.HousingDisplayFragment"
         android:label="fragment_housing_display"
-        tools:layout="@layout/fragment_housing_display" />
+        tools:layout="@layout/fragment_housing_display" >
+        <argument
+            android:name="PostShow"
+            app:argType="com.android.example.housingconnect.Post" />
+    </fragment>
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.android.example.housingconnect.SignInFragment"

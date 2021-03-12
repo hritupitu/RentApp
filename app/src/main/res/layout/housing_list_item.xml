@@ -12,7 +12,7 @@
             sure to make the appropriate changes in the RecyclerView adapter -->
 
     <ImageView
-        android:id="@+id/housingImage"
+        android:id="@+id/housingImage1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
@@ -28,46 +28,46 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/housingImage">
+        app:layout_constraintTop_toBottomOf="@+id/housingImage1">
 
         <TextView
-            android:id="@+id/housingType"
+            android:id="@+id/housingType1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="APARTMENT" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="312 University Ave. Davis, CA" />
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/price1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$3000" />
 
         <TextView
-            android:id="@+id/perMonthText"
+            android:id="@+id/perMonthText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="/month" />
 
         <TextView
-            android:id="@+id/numOfBeds"
+            android:id="@+id/numOfBeds1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="beds: 4" />
 
         <TextView
-            android:id="@+id/numOfBaths"
+            android:id="@+id/numOfBaths1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="2" />
 
         <TextView
-            android:id="@+id/covidTested"
+            android:id="@+id/covidTested1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Yes" />

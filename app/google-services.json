@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "45547565021",
+    "project_id": "housingconnect-14bce",
+    "storage_bucket": "housingconnect-14bce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45547565021:android:29cf4ed7ed3de889231034",
+        "android_client_info": {
+          "package_name": "com.android.example.housingconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45547565021-vhoerc4u9upucfmpliau42hhdtiv04ar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp7v98bbIvV2paERqRJIMf9ZO9vhxGI5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45547565021-vhoerc4u9upucfmpliau42hhdtiv04ar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

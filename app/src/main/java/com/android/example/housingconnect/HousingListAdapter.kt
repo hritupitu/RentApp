@@ -6,10 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.findFragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class HousingListAdapter(private var posts: List<Post>) : RecyclerView.Adapter<ItemViewHolder>() {
+private lateinit var posts: List<Post>
+class HousingListAdapter() : RecyclerView.Adapter<ItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.housing_list_item, parent, false)
         return ItemViewHolder(view)
@@ -18,21 +22,23 @@ class HousingListAdapter(private var posts: List<Post>) : RecyclerView.Adapter<I
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = posts[position]
         holder.apply {
+            housingType.text= posts[position].type.toString()
             // TODO: PHASE 3.1 - Re-define these values based on the the post object being displayed
-            housingType.text = "apartment"
-            location.text = "555 apartment road, Davis, CA"
-            price.text = "2000"
-            numOfBeds.text = "3"
-            numOfBaths.text = "2"
-            covidTested.text = "true"
+            location.text = posts[position].location.toString()
+            price.text = posts[position].price.toString()
+            numOfBeds.text = posts[position].bed.toString()
+            numOfBaths.text = posts[position].bath.toString()
+            covidTested.text = posts[position].covidTested
             // TODO: PHASE 3.1 Use Glide to show an image from the database
-            // Glide.with(holder.itemView)
-            //    .load("YOUR_URL_HERE" + item.image)
-            //    .into(housingImage)
+             Glide.with(holder.itemView)
+                .load("https://RentAppServer.hritupitu.repl.co/" + item.image)
+                .into(housingImage)
         }
 
         holder.housingItem.setOnClickListener{
             // TODO: PHASE 3.1 navigate to HousingDisplayFragment and send the Post obect
+            val action = HousingFeedFragmentDirections.actionHousingFeedFragmentToHousingDisplayFragment(posts[position])
+            findNavController(holder.itemView.findFragment()).navigate(action)
         }
     }
 
@@ -46,11 +52,11 @@ class HousingListAdapter(private var posts: List<Post>) : RecyclerView.Adapter<I
 
 class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val housingItem: ConstraintLayout = view.findViewById(R.id.housingItem)
-    val housingImage: ImageView = view.findViewById(R.id.housingImage)
-    val housingType: TextView = view.findViewById(R.id.housingType)
-    val location: TextView = view.findViewById(R.id.address)
-    val price: TextView = view.findViewById(R.id.price)
-    val numOfBeds: TextView = view.findViewById(R.id.numOfBeds)
-    val numOfBaths: TextView = view.findViewById(R.id.numOfBaths)
-    val covidTested: TextView = view.findViewById(R.id.covidTested)
+    val housingImage: ImageView = view.findViewById(R.id.housingImage1)
+    val housingType: TextView = view.findViewById(R.id.housingType1)
+    val location: TextView = view.findViewById(R.id.address1)
+    val price: TextView = view.findViewById(R.id.price1)
+    val numOfBeds: TextView = view.findViewById(R.id.numOfBeds1)
+    val numOfBaths: TextView = view.findViewById(R.id.numOfBaths1)
+    val covidTested: TextView = view.findViewById(R.id.covidTested1)
 }

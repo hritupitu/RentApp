@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_sign_in.*
 
 class SignInFragment : Fragment() {
 
     // TODO: PHASE 5 - add firebase connection (follow prompt and demo material)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,10 @@ class SignInFragment : Fragment() {
 
         // TODO: PHASE 3.4 - navigate to the FormLocationFragment when the user clicks the sign in
         //  button. there will be more involved during Phase 5
+        loginBtn.setOnClickListener {
+            val action = SignInFragmentDirections.actionSignInFragmentToFormLocationFragment()
+            findNavController().navigate(action)
+        }
 
     }
 

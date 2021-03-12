@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         //  as being late-initialized)
 
         housingService = Retrofit.Builder()
-            .baseUrl("Server URL")
+            .baseUrl("https://RentAppServer.hritupitu.repl.co/")
             .addConverterFactory(GsonConverterFactory.create())
             .build().create()
     }

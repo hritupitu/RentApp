@@ -8,5 +8,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class ImageUploadResponse(
     var message: String?,
-    var type: String?
+    var path: String?
 ) : Parcelable
