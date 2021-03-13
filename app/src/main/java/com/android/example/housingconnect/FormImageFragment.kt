@@ -65,7 +65,7 @@ class FormImageFragment : Fragment() {
         submitBtnToHome.setOnClickListener {
 
             //TODO: FINISH this
-            post.email = "mailto:"+user.email
+            post.email = user!!.email
             post.image = ""
             postImage()
 //            val action = FormImageFragmentDirections.actionFormImageFragmentToHousingFeedFragment()
