@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_form_location.*
 
 class FormLocationFragment : Fragment() {
 
+    var post = Post(0,"","",0,0,0,"","","","","","")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,11 +25,13 @@ class FormLocationFragment : Fragment() {
         // TODO: PHASE 3.2 - when a user clicks 'continue' navigate the user to the FormDetailsFragment
         //  and send the data the user has filled in so far. the recommended way is to send a Post object
         continueBtn.setOnClickListener {
-            val location = location.toString()
-            val city = city.toString()
-            val state = state.toString()
+
+            val location = location.text.toString()
+            val city = city.text.toString()
+            val state = state.text.toString()
             val address = "$location, $city, $state"
-            val action = FormLocationFragmentDirections.actionFormLocationFragmentToFormDetailsFragment("$address")
+            post.location = address
+            val action = FormLocationFragmentDirections.actionFormLocationFragmentToFormDetailsFragment(post)
             findNavController().navigate(action)
         }
 

@@ -17,7 +17,6 @@ import retrofit2.Response
 class HousingFeedFragment : Fragment() {
 
     val mAuth = FirebaseAuth.getInstance()
-    lateinit var rv : RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

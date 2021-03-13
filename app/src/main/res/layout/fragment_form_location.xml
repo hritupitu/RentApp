@@ -70,7 +70,7 @@
         tools:layout_editor_absoluteX="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/location"
+
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +80,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:id="@+id/location"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -92,7 +93,7 @@
             android:weightSum="2">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/city"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -102,6 +103,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/city"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -109,7 +111,7 @@
             <!-- TODO: Convert State's TextField into dropdown  -->
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/state"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -119,6 +121,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/state"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>

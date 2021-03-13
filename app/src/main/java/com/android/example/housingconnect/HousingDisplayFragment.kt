@@ -48,7 +48,7 @@ class HousingDisplayFragment : Fragment() {
         email.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:") // only email apps should handle this
-                putExtra(Intent.EXTRA_EMAIL, currentPost.email)
+                putExtra(Intent.EXTRA_EMAIL, arrayOf(currentPost.email))
             }
             startActivity(intent)
         }

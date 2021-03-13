@@ -26,9 +26,10 @@ import retrofit2.Response
 class FormImageFragment : Fragment() {
 
     val mAuth = FirebaseAuth.getInstance()
-    val args : FormImageFragmentArgs by navArgs()
+
     var imageUri: Uri? = null
-    val post = args.Description
+
+    lateinit var post:Post
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +45,8 @@ class FormImageFragment : Fragment() {
         Log.d("User",mAuth.currentUser.email)
         // TODO: PHASE 6.1 - Get an instance of the singleton housingService defined in the MainActivity
 
-
+        val args : FormImageFragmentArgs by navArgs()
+        post=args.postVal
 
         // TODO: PHASE 6.1 - set an OnClickListener on the upload Image Button and start an implicit
         //  intent that will pick an image from the users gallery. Make sure to match the request code
@@ -63,7 +65,7 @@ class FormImageFragment : Fragment() {
         submitBtnToHome.setOnClickListener {
 
             //TODO: FINISH this
-            post.email = user.email
+            post.email = "mailto:"+user.email
             post.image = ""
             postImage()
 //            val action = FormImageFragmentDirections.actionFormImageFragmentToHousingFeedFragment()
