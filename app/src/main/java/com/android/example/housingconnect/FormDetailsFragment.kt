@@ -27,11 +27,11 @@ class FormDetailsFragment : Fragment() {
         //  and send the data the user has filled in so far. the recommended way is to send a Post object
         continueBtn.setOnClickListener {
             val location = args.location
-            val type = housingType.toString()
-            val beds = bedrooms.toString().toInt()
-            val baths = bathrooms.toString().toInt()
-            val rent = rent.toString().toInt()
-            val movein = movein.toString()
+            val type = housingType.text.toString()
+            val beds = bedrooms.text.toString().toInt()
+            val baths = bathrooms.text.toString().toInt()
+            val rent = rent.text.toString().toInt()
+            val movein = movein.text.toString()
             val action = FormDetailsFragmentDirections.actionFormDetailsFragmentToFormDescriptionFragment(location,type,beds,baths,rent,movein)
             findNavController().navigate(action)
         }

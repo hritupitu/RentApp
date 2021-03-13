@@ -71,7 +71,7 @@
         <!-- TODO: Convert Housing Type's TextField into dropdown  -->
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/housingType"
+
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,6 +80,7 @@
             android:hint="Type of housing">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/housingType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -93,7 +94,7 @@
             android:weightSum="2">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/bedrooms"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -103,6 +104,7 @@
                 android:hint="Bedrooms">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bedrooms"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -110,7 +112,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/bathrooms"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -120,6 +122,7 @@
                 android:hint="Bathrooms">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bathrooms"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -137,7 +140,7 @@
             android:weightSum="2">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/rent"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -147,6 +150,7 @@
                 android:hint="Rent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -154,7 +158,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/movein"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -164,6 +168,7 @@
                 android:hint="Move-In">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/movein"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

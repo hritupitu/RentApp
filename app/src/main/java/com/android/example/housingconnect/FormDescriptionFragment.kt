@@ -16,7 +16,6 @@ import java.time.LocalDateTime
 
 class FormDescriptionFragment : Fragment() {
     val args : FormDescriptionFragmentArgs by navArgs()
-    lateinit var checkVal: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,8 +38,9 @@ class FormDescriptionFragment : Fragment() {
             post.location = args.location
             post.type = args.type
             post.image=""
-            post.desc = description.toString()
+            post.desc = description.text.toString()
             post.moveIn = args.movein
+            post.covidTested = "True"
             post.date = LocalDateTime.now().toString()
             if(covidTestedCheck.isChecked ) post.covidTested = "True"
             else post.covidTested ="False"

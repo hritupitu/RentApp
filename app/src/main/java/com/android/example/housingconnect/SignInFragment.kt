@@ -84,7 +84,7 @@ class SignInFragment : Fragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(tag, "signInWithCredential:success")
-                    findNavController().navigate(R.id.action_signInFragment_to_formLocationFragment)
+                    findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToFormLocationFragment())
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(tag, "signInWithCredential:failure", task.exception)
