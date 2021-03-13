@@ -48,8 +48,6 @@ class SignInFragment : Fragment() {
         //  button. there will be more involved during Phase 5
         loginBtn.setOnClickListener {
             startActivityForResult(googleSignInClient.signInIntent,1)
-
-
         }
 
     }

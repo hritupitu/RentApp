@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_housing_feed.*
 import retrofit2.Call
 import retrofit2.Response
 
 class HousingFeedFragment : Fragment() {
 
+    val mAuth = FirebaseAuth.getInstance()
     lateinit var rv : RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,14 +38,18 @@ class HousingFeedFragment : Fragment() {
         val housingListAdapter = HousingListAdapter()
         housing_feed_recycler_view.adapter = housingListAdapter
         housing_feed_recycler_view.layoutManager = LinearLayoutManager(requireContext())
-
+        val user = mAuth.currentUser
 
         // TODO: PHASE 3.1 - Add onClickListener to Post Button and navigate to signin page or
         //  the start of the form (FormLocationFragment)
         postButton.setOnClickListener{
-            val action = HousingFeedFragmentDirections.actionHousingFeedFragmentToFormLocationFragment()
+            var action = HousingFeedFragmentDirections.actionHousingFeedFragmentToFormLocationFragment()
+            if(user==null){
+                action = HousingFeedFragmentDirections.actionHousingFeedFragmentToSignInFragment()
+            }
             findNavController().navigate(action)
         }
+
 
         // TODO: PHASE 4 - Get an instance of the singleton housingService defined in the MainActivity
         val housingService = (requireActivity() as MainActivity).housingService

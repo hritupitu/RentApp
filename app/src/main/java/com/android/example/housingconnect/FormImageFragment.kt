@@ -10,11 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_form_image.*
 
 
 class FormImageFragment : Fragment() {
 
+    val mAuth = FirebaseAuth.getInstance()
     val args : FormImageFragmentArgs by navArgs()
     var imageUri: Uri? = null
 
@@ -28,7 +30,7 @@ class FormImageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val user = mAuth.currentUser
         // TODO: PHASE 6.1 - Get an instance of the singleton housingService defined in the MainActivity
 
 
@@ -45,7 +47,7 @@ class FormImageFragment : Fragment() {
         submitBtnToHome.setOnClickListener {
             val post = args.Description
             //TODO: FINISH this
-            post.email = ""
+            post.email = user.email
             post.image = ""
             val action = FormImageFragmentDirections.actionFormImageFragmentToHousingFeedFragment()
             findNavController().navigate(action)
