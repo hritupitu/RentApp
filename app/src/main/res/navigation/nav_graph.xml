@@ -60,7 +60,9 @@
         tools:layout="@layout/fragment_form_image" >
         <action
             android:id="@+id/action_formImageFragment_to_housingFeedFragment"
-            app:destination="@id/housingFeedFragment" />
+            app:destination="@id/housingFeedFragment"
+            app:popUpTo="@id/housingFeedFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="postVal"
             app:argType="com.android.example.housingconnect.Post" />
