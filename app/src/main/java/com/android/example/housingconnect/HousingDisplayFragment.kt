@@ -37,7 +37,7 @@ class HousingDisplayFragment : Fragment() {
         numOfBeds.text = currentPost.bed.toString()
         numOfBaths.text = currentPost.bath.toString()
         covidTested.text = if(currentPost.covidTested=="True") "Yes" else "No"
-        price.text = currentPost.price.toString()
+        price.text = "$"+currentPost.price.toString()
         datePosted.text=currentPost.date
         description.text = currentPost.desc
         movein.text = currentPost.moveIn

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HousingDisplayFragment">
 
-<!-- TODO: PHASE 3.3 - Display information for a Housing Listing
+        <!-- TODO: PHASE 3.3 - Display information for a Housing Listing
                 Make sure to include the respective Layouts and Views
                 needed to accomplish what you see on the prompt and designs -->
 
@@ -16,78 +17,40 @@
             android:id="@+id/houseImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars" />
 
         <Button
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/movein"
-            android:text="EMAIL" />
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/type"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="7.5dp"
-            android:textStyle="bold"
-            android:textSize="16.5dp"
-            android:textColor="@color/black"
-            android:text="Location" />
-
-        <TextView
-            android:id="@+id/numOfBeds"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/price"
-            android:text="Number Of Beds" />
+            android:layout_marginBottom="20dp"
+            android:text="EMAIL"
+            app:layout_constraintBottom_toTopOf="@+id/datePosted"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/numOfBaths"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/price"
-            android:layout_toRightOf="@+id/numOfBeds"
-            android:text="Number Of Baths" />
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="79dp"
+            android:text="Number Of Baths"
+            app:layout_constraintLeft_toRightOf="@+id/numOfBeds"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
 
         <TextView
             android:id="@+id/covidTested"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@+id/numOfBaths"
-            android:layout_below="@+id/price"
-            android:text="Covid Tested" />
-
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_below="@+id/houseImage"
-            android:layout_alignParentRight="true"
-            android:text="Price"
-            android:textSize="30dp"
-            android:textColor="#651FFF"/>
-
-        <TextView
-            android:id="@+id/datePosted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/email"
-            android:layout_centerInParent="true"
-            android:text="Date-Posted" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="79dp"
+            android:text="Covid Tested"
+            app:layout_constraintLeft_toRightOf="@+id/numOfBaths"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
 
         <TextView
             android:id="@+id/description"
@@ -95,34 +58,85 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/numOfBaths"
-            android:text="Description" />
+            android:text="Description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numOfBaths" />
 
         <TextView
             android:id="@+id/movein"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:text="Move-In Date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/datePosted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="16dp"
+            android:text="Date-Posted"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/numOfBeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="79dp"
+            android:text="Number Of Beds"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7.5dp"
+            android:text="Location"
+            android:textColor="@color/black"
+            android:textSize="16.5dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/description"
-            android:text="Move-In Date" />
+            android:layout_marginEnd="20dp"
+            android:text="Price"
+            android:textColor="#651FFF"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/houseImage" />
 
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/houseImage"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="7.5dp"
-        android:text="Type" />
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="7.5dp"
+            android:text="Type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/houseImage" />
 
-    <ImageView
-        android:id="@+id/bedrooms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/location"
-        android:layout_toLeftOf="@id/numOfBeds"
-        android:src="@drawable/ic_outline_king_bed_24" />
+        <TextView
+            android:id="@+id/permonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="27dp"
+            android:text="@string/month"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

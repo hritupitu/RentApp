@@ -25,10 +25,15 @@ class HousingListAdapter() : RecyclerView.Adapter<ItemViewHolder>() {
             housingType.text= posts[position].type.toString()
             // TODO: PHASE 3.1 - Re-define these values based on the the post object being displayed
             location.text = posts[position].location.toString()
-            price.text = posts[position].price.toString()
+            price.text = "$"+posts[position].price.toString()
             numOfBeds.text = posts[position].bed.toString()
             numOfBaths.text = posts[position].bath.toString()
-            covidTested.text = posts[position].covidTested
+            if (posts[position].covidTested=="False"|| posts[position].covidTested=="false"){
+                checkbox.setImageResource(R.drawable.ic_x)
+            }
+
+//            covidTested.text = posts[position].covidTested
+
             // TODO: PHASE 3.1 Use Glide to show an image from the database
              Glide.with(holder.itemView)
                 .load("https://RentAppServer.hritupitu.repl.co/" + item.image)
@@ -57,6 +62,7 @@ class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val location: TextView = view.findViewById(R.id.address1)
     val price: TextView = view.findViewById(R.id.price1)
     val numOfBeds: TextView = view.findViewById(R.id.numOfBeds1)
+    val checkbox : ImageView = view.findViewById(R.id.checkboxcovid)
     val numOfBaths: TextView = view.findViewById(R.id.numOfBaths1)
     val covidTested: TextView = view.findViewById(R.id.covidTested1)
 }

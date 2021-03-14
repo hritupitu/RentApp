@@ -21,12 +21,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
         android:orientation="vertical"
+        android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/housingImage1">
 
@@ -34,66 +36,114 @@
             android:id="@+id/housingType1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="APARTMENT"
             android:textStyle="bold"
-            android:text="APARTMENT" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/housingType1"
-            android:textStyle="bold"
-            android:textSize="18dp"
+            android:text="312 University Ave. Davis, CA"
             android:textColor="@color/black"
-            android:text="312 University Ave. Davis, CA" />
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/housingType1" />
 
         <TextView
             android:id="@+id/price1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/address1"
-            android:textSize="30dp"
+            android:text="$3000"
             android:textColor="#651FFF"
-            android:text="$3000" />
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="@+id/address1"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/perMonthText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/price1"
             android:layout_marginTop="-5dp"
-            android:layout_alignParentRight="true"
+            android:text="/month"
             android:textStyle="bold"
-            android:text="/month" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price1" />
 
         <TextView
             android:id="@+id/numOfBeds1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:layout_below="@+id/perMonthText1"
-            android:text="beds: 4" />
+            android:layout_marginStart="52dp"
+            android:text="beds: 4"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perMonthText1" />
 
         <TextView
             android:id="@+id/numOfBaths1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/perMonthText1"
-            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:layout_toRightOf="@+id/numOfBeds1"
-            android:layout_marginStart="30dp"
-            android:text="2"/>
+            android:text="2"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/address1" />
 
         <TextView
             android:id="@+id/covidTested1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/perMonthText1"
-            android:layout_toRightOf="@+id/numOfBaths1"
+            android:layout_marginStart="68dp"
+            android:layout_toEndOf="@+id/numOfBaths1"
+            android:text="Tested"
             android:textStyle="bold"
-            android:layout_marginStart="30dp"
-            android:text="Yes" />
+            app:layout_constraintLeft_toRightOf="@+id/numOfBaths1"
+            app:layout_constraintTop_toBottomOf="@id/perMonthText1" />
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/numOfBeds1"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address1"
+            app:srcCompat="@drawable/ic_bedroom" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/numOfBeds1"
+            app:layout_constraintTop_toBottomOf="@+id/address1"
+            app:layout_constraintVertical_bias="0.774"
+            app:srcCompat="@drawable/ic_bathroom" />
+
+        <ImageView
+            android:id="@+id/checkboxcovid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/covidTested1"
+            app:layout_constraintTop_toBottomOf="@+id/address1"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_check"
+            android:contentDescription="TODO" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
