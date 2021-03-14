@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -36,7 +37,11 @@ class HousingDisplayFragment : Fragment() {
         location.text = currentPost.location
         numOfBeds.text = currentPost.bed.toString()
         numOfBaths.text = currentPost.bath.toString()
-        covidTested.text = if(currentPost.covidTested=="True") "Yes" else "No"
+        val checkbox : ImageView = view.findViewById(R.id.covidbox)
+//        covidTested.text = if(currentPost.covidTested=="True") "Yes" else "No"
+        if (currentPost.covidTested=="False"|| currentPost.covidTested=="false"){
+            checkbox.setImageResource(R.drawable.ic_x)
+        }
         price.text = "$"+currentPost.price.toString()
         datePosted.text=currentPost.date
         description.text = currentPost.desc
