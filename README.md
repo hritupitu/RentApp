@@ -13,7 +13,7 @@ The objective of Project 3 was to develop an app for apartment listing using a w
 
 In the following video you can see how the application works and a comprehensive overview of the codebase
 
-Code Tour/Demo: [video-url-here]
+Code Tour/Demo: [https://drive.google.com/file/d/1h0S0oqszWW8MmNH9T5GpIZTVF5Vf0RTU/view?usp=sharing]
 
 Server URL: [https://replit.com/join/zssgsnbc-hritupitu]
 
