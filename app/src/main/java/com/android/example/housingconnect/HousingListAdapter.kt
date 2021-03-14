@@ -22,7 +22,7 @@ class HousingListAdapter() : RecyclerView.Adapter<ItemViewHolder>() {
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = posts[position]
         holder.apply {
-            housingType.text= posts[position].type.toString()
+            housingType.text= posts[position].type.toString().capitalize()
             // TODO: PHASE 3.1 - Re-define these values based on the the post object being displayed
             location.text = posts[position].location.toString()
             price.text = "$"+posts[position].price.toString()
