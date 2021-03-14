@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="15dp"
@@ -34,44 +34,66 @@
             android:id="@+id/housingType1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="APARTMENT" />
 
         <TextView
             android:id="@+id/address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/housingType1"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/black"
             android:text="312 University Ave. Davis, CA" />
 
         <TextView
             android:id="@+id/price1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/address1"
+            android:textSize="30dp"
+            android:textColor="#651FFF"
             android:text="$3000" />
 
         <TextView
             android:id="@+id/perMonthText1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/price1"
+            android:layout_marginTop="-5dp"
+            android:layout_alignParentRight="true"
+            android:textStyle="bold"
             android:text="/month" />
 
         <TextView
             android:id="@+id/numOfBeds1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@+id/perMonthText1"
             android:text="beds: 4" />
 
         <TextView
             android:id="@+id/numOfBaths1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2" />
+            android:layout_below="@+id/perMonthText1"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/numOfBeds1"
+            android:layout_marginStart="30dp"
+            android:text="2"/>
 
         <TextView
             android:id="@+id/covidTested1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/perMonthText1"
+            android:layout_toRightOf="@+id/numOfBaths1"
+            android:textStyle="bold"
+            android:layout_marginStart="30dp"
             android:text="Yes" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
