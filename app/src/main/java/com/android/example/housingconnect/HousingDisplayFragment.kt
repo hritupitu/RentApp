@@ -41,6 +41,7 @@ class HousingDisplayFragment : Fragment() {
         datePosted.text=currentPost.date
         description.text = currentPost.desc
         movein.text = currentPost.moveIn
+        type.text = currentPost.type
 
         // TODO: PHASE 3.3 - Create an onclick listener on a button to send an email.
         //  this stage will require sending an implicit intent to an email application.
